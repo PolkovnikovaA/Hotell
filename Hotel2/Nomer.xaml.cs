@@ -16,23 +16,18 @@ using System.Windows.Shapes;
 namespace Hotel2
 {
     /// <summary>
-    /// Логика взаимодействия для Home.xaml
+    /// Логика взаимодействия для Nomer.xaml
     /// </summary>
-    public partial class Home : Page
+    public partial class Nomer : Page
     {
-        public Home()
+        public Nomer()
         {
             InitializeComponent();
         }
 
-        private void Nomer_mouseDown(object sender, MouseButtonEventArgs e)     // переход на страницу TextBlock
+        private void Glavn_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Nomer.xaml", UriKind.Relative));
-        }
-
-        private void Bron_mouseDown(object sender, MouseButtonEventArgs e)  
-        {
-            NavigationService.Navigate(new Uri("/Bronirovanie.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }
     }
 }
