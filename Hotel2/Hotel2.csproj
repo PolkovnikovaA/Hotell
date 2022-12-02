@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,14 +64,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Admin.cs">
+      <DependentUpon>Basa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basa.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Basa.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Basa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Basa.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Bronirovanie.xaml.cs">
       <DependentUpon>Bronirovanie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nomer.cs">
+      <DependentUpon>Basa.tt</DependentUpon>
     </Compile>
     <Compile Include="Nomer.xaml.cs">
       <DependentUpon>Nomer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Registr.cs">
+      <DependentUpon>Basa.tt</DependentUpon>
+    </Compile>
     <Compile Include="Registr.xaml.cs">
       <DependentUpon>Registr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Basa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Uslugi.cs">
+      <DependentUpon>Basa.tt</DependentUpon>
     </Compile>
     <Page Include="Avtoriz.xaml">
       <SubType>Designer</SubType>
@@ -122,6 +161,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Basa.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Basa.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Basa.edmx.diagram">
+      <DependentUpon>Basa.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,6 +188,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Basa.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Basa.Context.cs</LastGenOutput>
+      <DependentUpon>Basa.edmx</DependentUpon>
+    </Content>
+    <Content Include="Basa.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Basa.edmx</DependentUpon>
+      <LastGenOutput>Basa.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
